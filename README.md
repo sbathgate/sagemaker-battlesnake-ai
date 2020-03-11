@@ -21,15 +21,13 @@ Several pre-trained neural network models are provided within this project as we
 
 This project can be used in three steps:
 
-- __[STEP 1 - Deploy the environment](Documentation/DeployTheAIEndpoint.md)__ : Deploy a Snake AI in a single click and you'll be ready to participate in a Battlesnake game!
-- __[STEP 2 - Customize the AI heuristics](Documentation/UpdateHeuristicsAndDeploy.md)__ : Customize your AI's behaviour, visualize your results, and publish an upgraded version!
-- __[STEP 3 - Train the AI model with your own settings](Documentation/TrainModelAndDeploy.md)__ : The most challenging step: retrain the AI with different settings, visualize your results, and publish an upgraded version!
-
-_Note: You have to do STEP 1 first in order to be able to do STEP 2 or STEP 3._
+- __[Step 1 - Deploy a Snake](Documentation/DeployTheAIEndpoint.md)__ : Deploy a snake with pre-trained AI. After this step, you'll be able to participate in a Battlesnake game! **Don't skip this step!** This step also deploys a local environment which is needed for the following steps.)
+- __[Step 2 - Build some Heuristics](Documentation/UpdateHeuristicsAndDeploy.md)__ : Write some rules for your snake to navigate common scenarios, visualize your snake, and publish the upgraded version of your snake!
+- __[Step 3 - Upgrade your Reinforcement Learning Model](Documentation/TrainModelAndDeploy.md)__ : This is the most rewarding step. Retrain your snake with different settings, visualize your snake, and publish an upgraded version!
 
 ### Architecture
 
-If you use STEP 1, STEP 2 and STEP 3, you will have the following deployed within your AWS account:
+If you use Steps 1-3, you will have the following deployed within your AWS account:
 
 ![General Architecture](Documentation/images/ArchitectureSagemakerBattlesnakeFull.png "General Architecture")
 
@@ -40,11 +38,11 @@ Refer to each step above in order to understand the costs that may be incurred a
 
 ### Content
 
-The included Jupyter notebooks are bundled with a step by step Battlesnake visualizer:
+The included Jupyter notebooks are bundled with a step-by-step Battlesnake visualizer:
 
 ![Battlesnake visualizer](Documentation/images/battlesnake-debugger.png "Battlesnake visualizer")
 
-With the Battlesnake visualizer, you can load any initial state and test how your snake will behave in various situations (See the [Visualize your algorithm](Documentation/UpdateHeuristicsAndDeploy.md#visualising-your-algorithm) section for the full list of features.)
+With the Battlesnake visualizer, you can load any initial state and test how your snake will behave in various situations (See the [Visualize your algorithm](Documentation/UpdateHeuristicsAndDeploy.md#visualizing-your-algorithm) section for the full list of features.)
 
 The source code of the project is organized as follows:
 
@@ -53,7 +51,7 @@ CloudFormation                    # contains the templates and scripts to automa
 InferenceEndpoint                 # contains the code for the Snake Endpoint
   > PretrainedModels              # existing models that are already trained
   > SnakeInference                # code that exposes the Snake API
-  > SageMakerEndpoint             # code that is used for model inference
+  > SageMakerEndpoint             # code that is used for model inference with SageMaker
 TrainingEnvironment
  > battlesnake_gym                # OpenAI Gym environment that simulates the Battlesnake game engine
  > notebook
